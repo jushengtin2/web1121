@@ -1,0 +1,42 @@
+.gray_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  width: 100vw; /* Full viewport width */
+  background-color: lightgray;
+  z-index: 0;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+body {
+  margin: 0;
+}
+#search {
+  margin-right: 2rem;
+}
+
+.gray_area p {
+  flex: 1; /* Takes up available space */
+  text-align: center;
+  font-size: 2rem;
+  margin: 0; /* Reset any default margin */
+}
+
+#dark_background {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://loremflickr.com/320/240");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
