@@ -1,6 +1,7 @@
 <template>
   <div class="gray_area">
     <p>首頁</p>
+    <p>hi</p>
     <svg
       id="search"
       xmlns="http://www.w3.org/2000/svg"
