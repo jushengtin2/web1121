@@ -11,8 +11,7 @@
   "tasks": {
     "build": {
       "name": "build",
-      "command": "yarn build",
-      "runAtStart": false
+      "command": "yarn build"
     },
     "dev": {
       "name": "dev",
@@ -24,18 +23,15 @@
     },
     "generate": {
       "name": "generate",
-      "command": "yarn generate",
-      "runAtStart": false
+      "command": "yarn generate"
     },
     "preview": {
       "name": "preview",
-      "command": "yarn preview",
-      "runAtStart": false
+      "command": "yarn preview"
     },
     "postinstall": {
       "name": "postinstall",
-      "command": "yarn postinstall",
-      "runAtStart": false
+      "command": "yarn postinstall"
     }
   }
 }

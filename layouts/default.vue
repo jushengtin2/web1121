@@ -134,6 +134,7 @@
         <NuxtLink to="/contact" class="nuxt-link-no-underline">創作</NuxtLink>
       </div>
     </div>
+    <BooksPicture />
   </div>
 </template>
 
@@ -143,7 +144,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-
+import BooksPicture from "~/components/BooksPicture.vue";
 const menuVisible = ref(false);
 
 function toggleMenu(event) {

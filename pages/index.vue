@@ -1,5 +1,6 @@
 <template>
   <div class="gray_area">
+    <NuxtPage></NuxtPage>
     <p>首頁</p>
     <svg
       id="search"
@@ -19,8 +20,8 @@
 <style>
 @import "~/assets/index.css";
 </style>
-
 <script>
+
 export default {
   layout: "default",
   methods: {},
