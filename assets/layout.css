@@ -49,3 +49,57 @@
   padding-right: 2%;
   margin-right: 5px;
 }
+
+.books {
+  display: flex;
+  max-width: 450px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 1rem;
+  padding: 0.5rem; /* Adjust padding */
+  margin: 2rem auto 0; /* Adjust top margin */
+  border-radius: 5px;
+}
+
+.books::-webkit-scrollbar {
+  display: none;
+}
+
+.books-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.books-container > * {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* 添加左右滑動按鈕的樣式 */
+.prev-button {
+  margin-top: 5px;
+  margin-right: 20px; /* Adjust the margin-right as needed */
+  cursor: pointer;
+}
+
+.next-button {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 8px;
+}
+.block h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
