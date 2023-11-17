@@ -1,5 +1,13 @@
 <template>
-  <div class="book-picture">
+  <div
+    class="books-picture"
+    @mousedown="onDragStart"
+    @mousemove="onDragMove"
+    @mouseup="onDragEnd"
+    @touchstart="onDragStart"
+    @touchmove="onDragMove"
+    @touchend="onDragEnd"
+  >
     <div class="title">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,6 +38,36 @@ export default {
     book: Object, // Define the book prop that will be passed to this component
   },
 };
+let isDragging = false;
+let startX = 0;
+let endX = 0;
+
+function onDragStart(event) {
+  isDragging = true;
+  startX = event.clientX || event.touches[0].clientX;
+}
+
+function onDragMove(event) {
+  if (!isDragging) return;
+  endX = event.clientX || event.touches[0].clientX;
+}
+
+function onDragEnd() {
+  if (!isDragging) return;
+
+  const threshold = 100; // Minimum drag distance to trigger a change
+
+  const diff = startX - endX;
+  if (diff > threshold) {
+    // Swiped right to left (next book)
+    $emit("nextBook");
+  } else if (diff < -threshold) {
+    // Swiped left to right (previous book)
+    $emit("prevBook");
+  }
+
+  isDragging = false;
+}
 </script>
 
 <style>

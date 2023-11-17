@@ -133,18 +133,14 @@
         <NuxtLink to="/contact" class="nuxt-link-no-underline">創作</NuxtLink>
       </div>
     </div>
-    <div class="block">
-      <h3>推薦</h3>
-      <div class="books">
-        <div class="books-container" ref="booksContainer">
-          <BooksPicture :book="books[currentIndex].value" />
-        </div>
-      </div>
-      <div class="booksbtn">
-        <button class="prev-button" @click="prevBook">上一本</button>
-        <button class="next-button" @click="nextBook">下一本</button>
-      </div>
-    </div>
+    <h3>推薦</h3>
+    <BooksPicArea />
+    <hr />
+    <h3>熱門</h3>
+    <BooksPicArea />
+    <hr />
+    <h3>追蹤</h3>
+    <BooksPicArea />
   </div>
 </template>
 
@@ -154,47 +150,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import BooksPicture from "~/components/BooksPicture.vue";
-
-const sampleBook1 = ref({
-  title: "Book Title",
-  imageUrl:
-    "https://www.friendlyseed.com.tw/sites/default/files/field_opinion_image/feng_mian_.jpg", // Replace with a valid image URL
-  description: "Book description goes here",
-});
-const sampleBook2 = ref({
-  title: "Book",
-  imageUrl: "https://gpi.culture.tw/pic/news/9953.jpg", // Replace with a valid image URL
-  description: "description goes here",
-});
-const books = [sampleBook1, sampleBook2]; // Array containing book references
+import BooksPicArea from "~/components/BooksPicArea.vue";
 
 const menuVisible = ref(false);
-const booksContainer = ref(null); // 參考 books-container 元素
-const currentIndex = ref(0); // 當前顯示的書籍索引
-
-// 切換到上一本書
-function prevBook() {
-  if (currentIndex.value > 0) {
-    currentIndex.value--;
-    scrollToCurrentBook();
-  }
-}
-// 切換到下一本書
-function nextBook() {
-  if (currentIndex.value < books.length - 1) {
-    currentIndex.value++;
-    scrollToCurrentBook();
-  }
-}
-
-// 滾動到當前書籍的位置
-function scrollToCurrentBook() {
-  const container = booksContainer.value;
-  const bookWidth = container.offsetWidth; // 每本書的寬度
-  const scrollX = currentIndex.value * bookWidth; // 計算滾動位置
-  container.scrollTo({ left: scrollX, behavior: "smooth" });
-}
 
 function toggleMenu(event) {
   // 阻止事件冒泡，避免立即触发 handleClickOutside
