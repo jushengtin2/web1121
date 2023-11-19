@@ -15,14 +15,20 @@
       ></path>
     </svg>
   </div>
-  
+  <BooksPicArea />
+  <hr />
+  <h3>熱門</h3>
+  <BooksPicArea />
+  <hr />
+  <h3>追蹤</h3>
+  <BooksPicArea />
 </template>
 
 <style>
 @import "~/assets/index.css";
 </style>
 <script>
-
+import BooksPicArea from "~/components/BooksPicArea.vue";
 export default {
   layout: "default",
   methods: {},
