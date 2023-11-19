@@ -133,7 +133,6 @@
         <NuxtLink to="/contact" class="nuxt-link-no-underline">創作</NuxtLink>
       </div>
     </div>
-    <h3>推薦123</h3>
   </div>
 </template>
 

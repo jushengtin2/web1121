@@ -17,6 +17,7 @@
   </div>
 
   <hr />
+  <BooksPicArea />
 </template>
 
 <style>
@@ -35,3 +36,6 @@
   font-weight: bold;
 }
 </style>
+<script>
+import BooksPicArea from "~/components/BooksPicArea.vue";
+</script>
