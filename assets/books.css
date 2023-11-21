@@ -1,0 +1,17 @@
+.white_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  width: 100vw; /* Full viewport width */
+  background-color: white;
+  z-index: 0;
+}
+
+.white_area p {
+  flex: 1; /* Takes up available space */
+  text-align: center;
+  font-size: 2rem;
+  margin: 0; /* Reset any default margin */
+}

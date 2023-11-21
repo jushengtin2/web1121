@@ -1,0 +1,20 @@
+<template>
+  <NuxtLink to="/" class="goback">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="3em"
+      height="3em"
+      viewBox="0 0 24 24"
+    >
+      <path fill="#00000" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7H4Z"></path>
+    </svg>
+  </NuxtLink>
+</template>
+
+<style>
+.invalid-css {
+  example-property: value; /* Unrecognized property causing the error */
+}
+</style>
+
+<script setup></script>

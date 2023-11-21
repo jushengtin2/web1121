@@ -3,7 +3,7 @@
     <div class="white_area">
       <p>熱門推薦</p>
 
-      <goback></goback>
+      <goback />
     </div>
 
     <div class="recommend">
@@ -38,4 +38,5 @@
 </style>
 <script>
 import BooksPicArea from "~/components/BooksPicArea.vue";
+import goback from "~/components/goback.vue";
 </script>

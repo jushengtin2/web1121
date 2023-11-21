@@ -15,6 +15,7 @@
       ></path>
     </svg>
   </div>
+  <h3>推薦</h3>
   <BooksPicArea />
   <hr />
   <h3>熱門</h3>
