@@ -26,6 +26,9 @@
   display: flex; /* 使用 flexbox 來排列按鈕 */
   overflow-x: auto; /* 允許水平滾動 */
 }
+.recommend::-webkit-scrollbar {
+  display: none;
+}
 
 .recommend button {
   width: 15%;
@@ -34,6 +37,7 @@
   background-color: rgb(222, 207, 207);
   border: none;
   font-weight: bold;
+  border-radius: 10px;
 }
 </style>
 <script>
