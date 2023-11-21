@@ -1,13 +1,32 @@
 .gray_area {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   text-align: center;
+  justify-content: space-between;
   width: 100vw; /* Full viewport width */
   background-color: lightgray;
   z-index: 0;
 }
+
+.white_area {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  justify-content: space-between;
+  width: 100vw; /* Full viewport width */
+  background-color: rgb(255, 255, 255);
+  z-index: 0;
+}
+
+.white_area p {
+  flex: 1; /* Takes up available space */
+  text-align: center;
+  font-size: 2rem;
+  margin: 0; /* Reset any default margin */
+}
+
 html,
 body {
   height: 100%;
@@ -32,6 +51,15 @@ body {
   margin: 0; /* Reset any default margin */
 }
 
+.recommendation p,
+.following p,
+.hot p {
+  flex: 1; /* Takes up available space */
+  text-align: center;
+  font-size: 2rem;
+  margin: 0; /* Reset any default margin */
+}
+
 #dark_background {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("https://loremflickr.com/320/240");
@@ -41,20 +69,10 @@ body {
   background-size: cover;
 }
 
-.white_area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-  width: 100vw; /* Full viewport width */
-  background-color: white;
-  z-index: 0;
-}
-
-.white_area p {
-  flex: 1; /* Takes up available space */
-  text-align: center;
-  font-size: 2rem;
-  margin: 0; /* Reset any default margin */
+hr {
+  border: none; /* 移除預設邊框 */
+  height: 2px; /* 線的高度 */
+  background-color: #121111; /* 線的顏色 */
+  margin: 20px auto; /* 上下、左右的間距 */
+  width: 80%;
 }

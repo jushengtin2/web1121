@@ -27,3 +27,48 @@
   gap: 10px;
   justify-content: center;
 }
+.popout_book {
+  border-radius: 7%; /* 圆角的半径 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+
+  background: #ffffff;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.halfdarkarea {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+
+  transform: translateY(100%);
+  transition: transform 0s ease;
+}
+
+.popout_book.active {
+  transform: translateY(35%);
+}
+
+.halfdarkarea.active {
+  transform: translateY(0%);
+
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
+}
+
+.popout_book > div {
+  display: flex; /* 应用 Flexbox */
+  justify-content: center; /* 水平居中 */
+}
+
+.bookpic_popout {
+  align-items: center;
+  justify-content: center;
+}

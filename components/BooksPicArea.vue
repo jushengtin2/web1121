@@ -14,13 +14,15 @@
       </svg>
     </button>
     <div class="books">
-      <div class="books-container" ref="booksContainer">
-        <BooksPicture
-          :book="books[currentIndex].value"
-          @prevBook="prevBook"
-          @nextBook="nextBook"
-        />
-      </div>
+      <button @click="togglebook">
+        <div class="books-container" ref="booksContainer">
+          <BooksPicture
+            :book="books[currentIndex].value"
+            @prevBook="prevBook"
+            @nextBook="nextBook"
+          />
+        </div>
+      </button>
     </div>
     <button class="next-button" @click="nextBook">
       <svg
@@ -35,6 +37,22 @@
         ></path>
       </svg>
     </button>
+  </div>
+  <div :class="{ popout_book: true, active: bookVisible }">
+    <div>
+      <div class="bookpic_popout" ref="booksContainer">
+        <BooksPicture
+          :book="books[currentIndex].value"
+          @prevBook="prevBook"
+          @nextBook="nextBook"
+        />
+      </div>
+    </div>
+  </div>
+  <div :class="{ halfdarkarea: true, active: bookVisible }">
+    <div>
+      <div class="halfdarkarea">123</div>
+    </div>
   </div>
 </template>
 
@@ -56,6 +74,7 @@ const sampleBook2 = ref({
 const books = [sampleBook1, sampleBook2];
 const booksContainer = ref(null);
 const currentIndex = ref(0);
+const bookVisible = ref(false);
 
 function prevBook() {
   if (currentIndex.value > 0) {
@@ -68,6 +87,28 @@ function nextBook() {
     currentIndex.value++;
   }
 }
+
+function togglebook(event) {
+  // 阻止事件冒泡，避免立即触发 handleClickOutside
+  event.stopPropagation();
+  bookVisible.value = !bookVisible.value;
+}
+
+function handleClickOutside(event) {
+  if (bookVisible.value && !event.target.closest(".popout_book")) {
+    bookVisible.value = false;
+  }
+}
+
+onMounted(() => {
+  // 监听点击事件
+  window.addEventListener("click", handleClickOutside);
+});
+
+onUnmounted(() => {
+  // 清除监听器
+  window.removeEventListener("click", handleClickOutside);
+});
 </script>
 
 <style>
