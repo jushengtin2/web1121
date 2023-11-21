@@ -5,7 +5,10 @@
 .books::-webkit-scrollbar {
   display: none;
 }
-
+.btn {
+  background-color: transparent;
+  border-color: transparent;
+}
 .books-container {
   display: inline-flex;
 }

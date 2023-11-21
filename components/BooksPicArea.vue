@@ -14,7 +14,7 @@
       </svg>
     </button>
     <div class="books">
-      <button @click="togglebook">
+      <button @click="togglebook" class="btn">
         <div class="books-container" ref="booksContainer">
           <BooksPicture
             :book="books[currentIndex].value"
