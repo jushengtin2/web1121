@@ -1,60 +1,40 @@
 #top {
-  display: flex;
+  @apply flex;  
 }
 
 #top button {
-  position: absolute;
-  top: 0.7rem;
-  left: 2rem;
-  background-color: transparent;
-  border-color: transparent;
+  @apply absolute top-2 left-2 bg-transparent border-transparent; 
 }
 
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 35%;
-  background: #eee;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
+  @apply fixed left-0 top-0 bottom-0 w-1/3 bg-gray-200 transform -translate-x-full transition-transform duration-500 ease-in-out;
 }
 
 .sidebar.active {
-  transform: translateX(0);
-}
+  @apply transform translate-x-0;
+} 
 
 .nuxt-link-no-underline {
-  color: black;
-  text-decoration: none;
-}
+  @apply text-black no-underline;
+}  
 
 #appname {
-  font-size: 1em;
+  @apply text-base;
 }
 
 .sidebar > div {
-  display: flex; /* 应用 Flexbox */
-  justify-content: center; /* 水平居中 */
-  margin-bottom: 5%;
-  font-family: Microsoft YaHei;
-  font-size: 120%;
+  @apply flex justify-center mb-5 font-microsoft text-lg; 
 }
 
-#list2_img,
+#list2_img, 
 #list3_img,
-#list4_img,
+#list4_img,  
 #list5_img,
 #list6_img,
 #list7_img {
-  padding-right: 2%;
-  margin-right: 5px;
+  @apply pr-1 mr-2; 
 }
+
 h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 0;
+  @apply flex justify-center items-center mt-4 mb-0; 
 }

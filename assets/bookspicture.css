@@ -1,32 +1,19 @@
 .book-picture {
-  /* Ensure items are displayed in a row */
-  display: flex;
-  flex-direction: column; /* Display content in a column */
-  /* Adjust styles as needed */
+  @apply flex flex-col;  
 }
 
 .title {
-  /* Display items in a row */
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
-  margin-bottom: 10px; /* Adjust margin as needed */
+  @apply flex items-center mb-4;
 }
 
 .title svg {
-  /* Add styles to the SVG icon */
-  width: 1em; /* Adjust size as needed */
-  height: 1em; /* Adjust size as needed */
-  margin-right: 5px; /* Adjust spacing as needed */
+  @apply w-4 h-4 mr-2;  
 }
 
 .book-info {
-  /* Display book information in a row */
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
+  @apply flex items-center;
 }
 
 .book-info img {
-  width: 150px; /* Set the width as desired */
-  height: 10px; /* Automatically adjust height to maintain aspect ratio */
-  margin-right: 10px; /* Adjust spacing as needed */
+  @apply w-40 h-auto mr-4;
 }

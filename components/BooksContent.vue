@@ -1,5 +1,5 @@
 <template>
-  <div class="block">
+  <div class="block_content">
     <div class="books">
       <div class="books-container" ref="booksContainer">
         <BooksPicture

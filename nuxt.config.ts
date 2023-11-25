@@ -1,4 +1,13 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
-  devtools: { enabled: true }
-})
+export default {
+  css: ["~/assets/index.css",
+  "~/assets/books.css",
+  "~/assets/BooksPicArea.css",
+  "~/assets/layout.css",
+  "~/assets/search.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+};

@@ -25,7 +25,7 @@
     <img
       :src="book.imageUrl"
       alt="Book Cover"
-      :style="{ width: '200px', height: '300px' }"
+      :style="{ width: '20vw', height: '30vw' }"
     />
     <!-- Other book information -->
     <p>{{ book.description }}</p>

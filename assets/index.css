@@ -1,78 +1,29 @@
-.gray_area {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-  justify-content: space-between;
-  width: 100vw; /* Full viewport width */
-  background-color: lightgray;
-  z-index: 0;
-}
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .white_area {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-  justify-content: space-between;
-  width: 100vw; /* Full viewport width */
-  background-color: rgb(255, 255, 255);
-  z-index: 0;
+  @apply flex items-center text-center justify-between w-[96.1vw] bg-white z-0 p-4;
 }
-
 .white_area p {
-  flex: 1; /* Takes up available space */
-  text-align: center;
-  font-size: 2rem;
-  margin: 0; /* Reset any default margin */
-}
+  @apply text-[2rem] m-0;
+  /* Reset any default margin */
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-body {
-  margin: 0;
+  /* 新增 Flexbox 設定 */
 }
 #search {
-  margin-right: 2rem;
-}
-
-.gray_area p {
-  flex: 1; /* Takes up available space */
-  text-align: center;
-  font-size: 2rem;
-  margin: 0; /* Reset any default margin */
+  @apply mr-8;
 }
 
 .recommendation p,
 .following p,
 .hot p {
-  flex: 1; /* Takes up available space */
-  text-align: center;
-  font-size: 2rem;
-  margin: 0; /* Reset any default margin */
+  @apply flex-1 text-center text-[2rem] m-0;
 }
-
 #dark_background {
+  @apply h-full bg-center bg-no-repeat bg-cover;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("https://loremflickr.com/320/240");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-
 hr {
-  border: none; /* 移除預設邊框 */
-  height: 2px; /* 線的高度 */
-  background-color: #121111; /* 線的顏色 */
-  margin: 20px auto; /* 上下、左右的間距 */
-  width: 80%;
+  @apply h-0.5 bg-[#121111] w-4/5 mx-auto my-5 border-[none];
 }
