@@ -13,16 +13,14 @@
         ></path>
       </svg>
     </button>
-    <div class="books">
-      <button @click="togglebook" class="btn">
-        <div class="books-container" ref="booksContainer">
-          <BooksPicture
-            :book="books[currentIndex].value"
-            @prevBook="prevBook"
-            @nextBook="nextBook"
-          />
-        </div>
-      </button>
+    <div class="books" @click="togglebook">
+      <div class="books-container" ref="booksContainer">
+        <BooksPicture
+          :book="books[currentIndex].value"
+          @prevBook="prevBook"
+          @nextBook="nextBook"
+        />
+      </div>
     </div>
     <button class="next-button" @click="nextBook">
       <svg
@@ -38,20 +36,23 @@
       </svg>
     </button>
   </div>
-  <div :class="{ popout_book: true, active: bookVisible }">
-    <div>
-      <div class="bookpic_popout" ref="booksContainer">
-        <BooksPicture
-          :book="books[currentIndex].value"
-          @prevBook="prevBook"
-          @nextBook="nextBook"
-        />
+  <div class="fixed">
+    <div :class="{ popout_book: true, active: bookVisible }">
+      <div class="list123">
+        <BooksPicture :book="books[currentIndex].value" />
+
+        <div>
+          <NuxtLink to="/books" class="nuxt-link-no-underline"
+            >開始閱讀</NuxtLink
+          >
+        </div>
       </div>
     </div>
-  </div>
-  <div :class="{ halfdarkarea: true, active: bookVisible }">
-    <div>
-      <div class="halfdarkarea">123</div>
+
+    <div :class="{ halfdarkarea: true, active: bookVisible }">
+      <div>
+        <div class="halfdarkarea"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -89,9 +90,9 @@ function nextBook() {
 }
 
 function togglebook(event) {
-  // 阻止事件冒泡，避免立即触发 handleClickOutside
   event.stopPropagation();
   bookVisible.value = !bookVisible.value;
+
 }
 
 function handleClickOutside(event) {

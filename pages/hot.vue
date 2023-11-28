@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="white_area">
+      <Bar />
       <p>熱門推薦</p>
 
       <goback />
@@ -43,4 +44,5 @@
 <script>
 import BooksPicArea from "~/components/BooksPicArea.vue";
 import goback from "~/components/goback.vue";
+import Bar from "~/components/Bar.vue"
 </script>

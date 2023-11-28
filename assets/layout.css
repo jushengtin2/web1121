@@ -3,7 +3,7 @@
 }
 
 #top button {
-  @apply absolute top-2 left-2 bg-transparent border-transparent; 
+  @apply absolute top-2 left-2 bg-transparent border-transparent z-0; 
 }
 
 .sidebar {

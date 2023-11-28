@@ -22,12 +22,13 @@
       </svg>
       <h2>{{ book.title }}</h2>
     </div>
-    <img
-      :src="book.imageUrl"
-      alt="Book Cover"
-      :style="{ width: '20vw', height: '30vw' }"
-    />
-    <!-- Other book information -->
+    <div class="bookimg">
+      <img
+        :src="book.imageUrl"
+        alt="Book Cover"
+        :style="{ width: '20vw', height: '30vw' }"
+      />
+    </div>
     <p>{{ book.description }}</p>
   </div>
 </template>

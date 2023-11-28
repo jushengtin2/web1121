@@ -1,5 +1,6 @@
 <template>
   <div class="white_area">
+  <Bar />
     <p>蒐藏</p>
     <goback />
   </div>
@@ -7,4 +8,5 @@
 </template>
 <script>
 import BooksPicArea from "~/components/BooksPicArea.vue";
+import Bar from "~/components/Bar.vue"
 </script>
