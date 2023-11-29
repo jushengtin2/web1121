@@ -1,6 +1,7 @@
 <template>
+
   <div class="white_area" v-if="show">
-  <Bar />
+    <Bar />
     <p>首頁</p>
     <button @click="handleBtnClick">
       <svg
@@ -55,10 +56,15 @@
   </div>
   <hr />
   <h3>熱門</h3>
+  <div class="isolate">
   <BooksPicArea />
+  </div>
   <hr />
   <h3>追蹤</h3>
+  <div class="isolate">
   <BooksPicArea />
+  </div>
+
 </template>
 
 <style>

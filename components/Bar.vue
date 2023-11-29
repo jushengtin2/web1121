@@ -20,18 +20,18 @@
       <br />
       <div id="appname">APP NAME</div>
       <div id="list1">
-      <NuxtLink to="/user">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="6em"
-          height="6em"
-          viewBox="0 0 256 256"
-        >
-          <path
-            fill="currentColor"
-            d="M172 120a44 44 0 1 1-44-44a44.05 44.05 0 0 1 44 44Zm60 8A104 104 0 1 1 128 24a104.11 104.11 0 0 1 104 104Zm-16 0a88.09 88.09 0 0 0-91.47-87.93C77.43 41.89 39.87 81.12 40 128.25a87.65 87.65 0 0 0 22.24 58.16A79.71 79.71 0 0 1 84 165.1a4 4 0 0 1 4.83.32a59.83 59.83 0 0 0 78.28 0a4 4 0 0 1 4.83-.32a79.71 79.71 0 0 1 21.79 21.31A87.62 87.62 0 0 0 216 128Z"
-          ></path>
-        </svg>
+        <NuxtLink to="/userpage">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="6em"
+            height="6em"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="currentColor"
+              d="M172 120a44 44 0 1 1-44-44a44.05 44.05 0 0 1 44 44Zm60 8A104 104 0 1 1 128 24a104.11 104.11 0 0 1 104 104Zm-16 0a88.09 88.09 0 0 0-91.47-87.93C77.43 41.89 39.87 81.12 40 128.25a87.65 87.65 0 0 0 22.24 58.16A79.71 79.71 0 0 1 84 165.1a4 4 0 0 1 4.83.32a59.83 59.83 0 0 0 78.28 0a4 4 0 0 1 4.83-.32a79.71 79.71 0 0 1 21.79 21.31A87.62 87.62 0 0 0 216 128Z"
+            ></path>
+          </svg>
         </NuxtLink>
       </div>
 
@@ -131,25 +131,58 @@
             d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h8.925l-2 2H5v14h14v-6.95l2-2V19q0 .825-.588 1.413T19 21H5Zm7-9Zm-3 3v-4.25l9.175-9.175q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.138.738t-.437.662L13.25 15H9ZM21.025 4.4l-1.4-1.4l1.4 1.4ZM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575V13Zm6.5-6.5l-.725-.7l.725.7l.7.7l-.7-.7Z"
           ></path>
         </svg>
-        <NuxtLink to="/contact" class="nuxt-link-no-underline">創作</NuxtLink>
+        <button @click="openwrite" class="nuxt-link-no-underline">創作</button>
       </div>
+    </div>
+  </div>
+  <div class="fixedwrite" v-if="writeopen">
+    <div class="write_form_bg">
+      <div class="writeoptions">
+        <label for="name" class="block">名稱(2~10中英字)</label>
+        <input type="text" id="name" class="input" />
+      </div>
+
+      <div class="writecatagory">
+        <label for="type" class="block">類型</label>
+        <select name="catagory">
+          <option value="">請選擇繪本類型</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
+      </div>
+
+      <div class="writeoptions">
+        <label for="tags" class="block">標籤</label>
+        <input type="text" id="tags" class="input" />
+      </div>
+      <NuxtLink to="/create" class="btn">新增 </NuxtLink>
     </div>
   </div>
 </template>
 
 <style>
-@import "~/assets/layout.css";
+@import "~/assets/Bar.css";
 </style>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
 const menuVisible = ref(false);
+const writeopen = ref(false);
 
 function toggleMenu(event) {
-  // 阻止事件冒泡，避免立即触发 handleClickOutside
   event.stopPropagation();
   menuVisible.value = !menuVisible.value;
+}
+
+function handlewriteClickOutside(event) {
+  if (writeopen.value && !event.target.closest(".write_form_bg")) {
+    writeopen.value = false;
+  }
 }
 
 function handleClickOutside(event) {
@@ -158,13 +191,18 @@ function handleClickOutside(event) {
   }
 }
 
+function openwrite() {
+  event.stopPropagation();
+  writeopen.value = !writeopen.value;
+}
+
 onMounted(() => {
-  // 监听点击事件
   window.addEventListener("click", handleClickOutside);
+  window.addEventListener("click", handlewriteClickOutside);
 });
 
 onUnmounted(() => {
-  // 清除监听器
-  window.removeEventListener("click", handleClickOutside);
+  window.removeEventListener("click", handlewriteClickOutside);
+  window.removeEventListener("click", handlewritewriteClickOutside);
 });
 </script>

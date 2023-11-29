@@ -1,14 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply m-0 w-full overflow-x-hidden;
+}
+
 .white_area {
-  @apply flex items-center text-center justify-between w-[96.1vw] bg-white z-0 p-4;
+  @apply flex items-center text-center justify-between w-full bg-white z-0 p-4 relative;
 }
 .white_area p {
   @apply text-[2rem] m-0;
-  /* Reset any default margin */
-
-  /* 新增 Flexbox 設定 */
 }
 #search {
   @apply mr-8;
@@ -25,7 +27,7 @@
     url("https://loremflickr.com/320/240");
 }
 hr {
-  @apply h-0.5 bg-[#121111] w-4/5 mx-auto my-5 border-[none];
+  @apply h-[0-5px] bg-[#121111] w-4/5 mx-auto my-5 border-[none];
 }
 
 .background {
@@ -41,9 +43,5 @@ hr {
 }
 
 .searchbox {
-  @apply bg-gray-200 h-8 rounded-lg flex items-center; 
-}
-
-body {
-  overflow: hidden; 
+  @apply bg-gray-200 rounded-lg flex items-center;
 }

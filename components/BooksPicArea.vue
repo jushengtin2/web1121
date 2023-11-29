@@ -38,9 +38,8 @@
   </div>
   <div class="fixed">
     <div :class="{ popout_book: true, active: bookVisible }">
-      <div class="list123">
+      <div class="content">
         <BooksPicture :book="books[currentIndex].value" />
-
         <div>
           <NuxtLink to="/books" class="nuxt-link-no-underline"
             >開始閱讀</NuxtLink
@@ -92,7 +91,6 @@ function nextBook() {
 function togglebook(event) {
   event.stopPropagation();
   bookVisible.value = !bookVisible.value;
-
 }
 
 function handleClickOutside(event) {
@@ -112,6 +110,6 @@ onUnmounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 @import "~/assets/BooksPicArea.css";
 </style>

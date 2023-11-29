@@ -18,5 +18,9 @@
     "tailwindcss": "^3.3.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.12.22",
+    "@nuxtjs/auth-next": "^5.0.0-1667386184.dfbbb54"
   }
 }

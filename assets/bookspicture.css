@@ -1,6 +1,5 @@
-
 .book-picture {
-  @apply w-full flex flex-col;   
+  @apply w-full flex flex-col;
 }
 
 .title {
@@ -8,22 +7,15 @@
 }
 
 .bookimg {
-  @apply w-full flex justify-center items-center; 
+  @apply w-full flex justify-center items-center;
 }
 
+.bookimg img {
+  @apply w-1/2 h-1/6;
+}
 .bookdescription {
   @apply w-full flex justify-center items-center;
 }
 .title svg {
   @apply w-[1em] h-[1em] mr-[5px];
-
 }
-.book-info {
-  @apply flex items-center;
-
-}
-.book-info img {
-  @apply w-[150px] h-2.5 mr-2.5;
-
-}
-

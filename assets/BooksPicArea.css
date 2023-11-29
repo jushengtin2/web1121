@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 .books {
   @apply overflow-x-auto;
 }
@@ -30,7 +27,7 @@
   @apply fixed left-0 top-0 bottom-0 z-20 w-full transform translate-y-full transition-transform duration-0 ease-in-out;
 }
 .popout_book.active {
-  @apply transform translate-y-1/3 ;
+  @apply transform translate-y-1/3;
 }
 .halfdarkarea.active {
   @apply transform translate-y-0 bg-black/50;
@@ -54,16 +51,14 @@
 .halfdarkarea.active {
   @apply translate-y-[0%] bg-[rgba(0,0,0,0.5)];
 }
-.list123 {
-  @apply flex w-full flex-wrap justify-center items-center flex-col;
+.content {
+  @apply flex flex-col items-center justify-center mt-0 pt-0;
 }
-.list123 > p {
+.content > p {
   @apply w-[70%] whitespace-normal;
   word-wrap: break-word;
 }
 
 .fixed {
-  max-width: 100vw;
-  max-height: 100vh;
+  @apply w-full h-full;
 }
-

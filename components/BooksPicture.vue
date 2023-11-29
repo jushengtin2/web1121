@@ -23,13 +23,9 @@
       <h2>{{ book.title }}</h2>
     </div>
     <div class="bookimg">
-      <img
-        :src="book.imageUrl"
-        alt="Book Cover"
-        :style="{ width: '20vw', height: '30vw' }"
-      />
+      <img :src="book.imageUrl" alt="Book Cover" />
     </div>
-    <p>{{ book.description }}</p>
+    <p class="bookdescription">{{ book.description }}</p>
   </div>
 </template>
 
