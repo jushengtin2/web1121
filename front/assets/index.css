@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply m-0 w-full overflow-x-hidden;
+}
+.white_area {
+  @apply flex items-center text-center justify-between w-full bg-white z-0 p-4 relative;
+}
+.white_area p {
+  @apply text-[2rem] m-0;
+}
+#search {
+  @apply mr-8;
+}
+.recommendation p,
+.following p,
+.hot p {
+  @apply flex-1 text-center text-[2rem] m-0;
+}
+#dark_background {
+  @apply h-full bg-center bg-no-repeat bg-cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://loremflickr.com/320/240");
+}
+hr {
+  @apply h-[0-5px] bg-[#121111] w-4/5 mx-auto my-5 border-[none];
+}
+.background {
+  @apply mt-4 ml-5 flex flex-row items-center gap-4 z-30;
+}
+#search {
+  @apply ml-4;
+}
+#searchtext {
+  @apply bg-transparent border-transparent focus:outline-none w-full;
+}
+.searchbox {
+  @apply bg-gray-200 rounded-lg flex items-center;
+}
+.display {
+  @apply grid grid-cols-5 gap-4;
+}
+.left {
+  @apply ml-auto;
+}
+.right {
+  @apply mr-auto;
+}
+@media (max-width: 640px) {
+  .display {
+    @apply grid grid-cols-1 gap-4;
+  }
+  .left {
+    @apply rotate-90;
+    @apply mx-auto;
+  }
+  .right {
+    @apply rotate-90;
+    @apply mx-auto;
+  }
+}
