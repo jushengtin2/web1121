@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "NODE_ENV=development nuxt build",
-    "dev": "NODE_ENV=development nuxt dev",
+    "dev": "cross-env NODE_ENV=development nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -13,6 +13,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
     "nuxt": "^3.8.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
@@ -20,8 +21,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "vue-clerk": "^0.1.1",
     "@clerk/clerk-sdk-node": "^4.12.22",
-    "@nuxtjs/auth-next": "^5.0.0-1667386184.dfbbb54"
+    "@nuxtjs/auth-next": "^5.0.0-1667386184.dfbbb54",
+    "vue-clerk": "^0.1.1"
   }
 }

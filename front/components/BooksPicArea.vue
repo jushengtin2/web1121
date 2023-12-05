@@ -9,7 +9,7 @@
     </div>
 
   </div>
-  <div v-if="bookVisible" class="fixed">
+  <div class="bookzone">
     <div :class="{ popout_book: true, active: bookVisible }">
       <div class="content">
         <BooksPicture :book="books[currentIndex].value" />
